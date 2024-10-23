@@ -1,5 +1,4 @@
 # coding:utf-8
-
 from PyQt5.QtCore import Qt, QUrl
 from PyQt5.QtGui import QIcon, QDesktopServices
 from PyQt5.QtWidgets import QHBoxLayout, QApplication,QWidget,QLabel
@@ -8,8 +7,8 @@ from qfluentwidgets import (NavigationBar, NavigationItemPosition, MessageBox,
                             isDarkTheme, setTheme, Theme,getFont)
 from qfluentwidgets import FluentIcon as FIF
 from qframelesswindow import FramelessWindow
-from modules.navigationbar import StackedWidget
-from modules.titlebar import CustomTitleBar
+from modules.stacked_widget import StackedWidget
+from modules.title_widget import CustomTitleBar
 
 class Widget(QWidget):
     def __init__(self, text: str, parent=None):
@@ -27,7 +26,7 @@ class Window(FramelessWindow):
         self.setTitleBar(CustomTitleBar(self))
 
         # use dark theme mode
-        # setTheme(Theme.DARK)
+        setTheme(Theme.DARK)
 
         # change the theme color
         # setThemeColor('#0078d4')
@@ -44,10 +43,7 @@ class Window(FramelessWindow):
 
         # initialize layout
         self.initLayout()
-
-        # add items to navigation interface
         self.initNavigation()
-
         self.initWindow()
 
     def initLayout(self):

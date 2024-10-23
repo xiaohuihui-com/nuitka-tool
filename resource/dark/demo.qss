@@ -8,6 +8,8 @@ StackedWidget {
     border-bottom: none;
     border-top-left-radius: 10px;
     background-color: rgb(39, 39, 39);
+    font: 18px 'Segoe UI';
+    font-weight: bold;
 }
 
 Window {
@@ -24,7 +26,8 @@ CustomTitleBar {
 
 CustomTitleBar>QLabel#titleLabel {
     background: transparent;
-    font: 13px 'Segoe UI';
+    font: 18px 'Segoe UI';
+    font-weight: bold;
     padding: 0 10px;
     color: white;
 }

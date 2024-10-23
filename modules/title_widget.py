@@ -4,7 +4,7 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QLabel, QHBoxLayout, QVBoxLayout
 
 from qfluentwidgets import  SearchLineEdit
-from qframelesswindow import TitleBar
+from qframelesswindow import TitleBar,StandardTitleBar
 
 class CustomTitleBar(TitleBar):
     """ Title bar with icon and title """
@@ -31,10 +31,10 @@ class CustomTitleBar(TitleBar):
         self.window().windowTitleChanged.connect(self.setTitle)
 
         # add search line edit
-        self.searchLineEdit = SearchLineEdit(self)
-        self.searchLineEdit.setPlaceholderText('搜索应用、游戏、电影、设备等')
-        self.searchLineEdit.setFixedWidth(400)
-        self.searchLineEdit.setClearButtonEnabled(True)
+        # self.searchLineEdit = SearchLineEdit(self)
+        # self.searchLineEdit.setPlaceholderText('搜索应用、游戏、电影、设备等')
+        # self.searchLineEdit.setFixedWidth(400)
+        # self.searchLineEdit.setClearButtonEnabled(True)
         #
         self.vBoxLayout = QVBoxLayout()
         self.buttonLayout = QHBoxLayout()
@@ -55,5 +55,5 @@ class CustomTitleBar(TitleBar):
     def setIcon(self, icon):
         self.iconLabel.setPixmap(QIcon(icon).pixmap(18, 18))
 
-    def resizeEvent(self, e):
-        self.searchLineEdit.move((self.width() - self.searchLineEdit.width()) //2, 8)
+    # def resizeEvent(self, e):
+    #     self.searchLineEdit.move((self.width() - self.searchLineEdit.width()) //2, 8)
