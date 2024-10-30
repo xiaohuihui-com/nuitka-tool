@@ -1,9 +1,9 @@
 # coding: utf-8
 from PyQt5.QtCore import QUrl, QSize, QTimer
-from PyQt5.QtGui import QIcon, QDesktopServices, QColor
+from PyQt5.QtGui import QIcon, QDesktopServices
 from PyQt5.QtWidgets import QApplication
 
-from qfluentwidgets import (NavigationAvatarWidget, NavigationItemPosition, MessageBox, FluentWindow,
+from qfluentwidgets import (NavigationItemPosition, FluentWindow,
                             SplashScreen, SystemThemeListener, isDarkTheme)
 from qfluentwidgets import FluentIcon as FIF
 
@@ -107,14 +107,14 @@ class MainWindow(FluentWindow):
     def initWindow(self):
         self.resize(960, 780)
         self.setMinimumWidth(760)
-        self.setWindowIcon(QIcon(':/gallery/images/logo.png'))
+        self.setWindowIcon(QIcon(':gallery/images/logo.png'))
         self.setWindowTitle('PyQt-Fluent-Widgets')
 
         self.setMicaEffectEnabled(cfg.get(cfg.micaEnabled))
 
         # create splash screen
         self.splashScreen = SplashScreen(self.windowIcon(), self)
-        self.splashScreen.setIconSize(QSize(106, 106))
+        self.splashScreen.setIconSize(QSize(160, 160))
         self.splashScreen.raise_()
 
         desktop = QApplication.desktop().availableGeometry()
@@ -150,6 +150,7 @@ class MainWindow(FluentWindow):
     def switchToSample(self, routeKey, index):
         """ switch to sample """
         interfaces = self.findChildren(GalleryInterface)
+        print(interfaces)
         for w in interfaces:
             if w.objectName() == routeKey:
                 self.stackedWidget.setCurrentWidget(w, False)

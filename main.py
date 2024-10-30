@@ -11,9 +11,9 @@ from PyQt5.QtWidgets import QApplication
 from qfluentwidgets import FluentTranslator
 
 # 导入配置模块
-from app.common.config import cfg
+from gallary.app.common.config import cfg
 # 导入主窗口
-from app.view.main_window import MainWindow
+from gallary.app.view.main_window import MainWindow
 
 # 启用 DPI 缩放
 # 根据配置调整 DPI 缩放
@@ -33,7 +33,7 @@ app = QApplication(sys.argv)
 app.setAttribute(Qt.AA_DontCreateNativeWidgetSiblings)
 
 # 国际化支持
-# 设置多语言支持
+# 设置多语言支
 locale = cfg.get(cfg.language).value
 translator = FluentTranslator(locale)
 galleryTranslator = QTranslator()
