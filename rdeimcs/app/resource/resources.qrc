@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="resource">
+        <file>images/logo.png</file>
+        <file>images/R.png</file>
+        <file>images/head.png</file>
+
+        <file>qss/light/link_card.qss</file>
+        <file>qss/light/sample_card.qss</file>
+        <file>qss/light/home_interface.qss</file>
+    </qresource>
+</RCC>
